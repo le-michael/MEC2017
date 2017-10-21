@@ -1,5 +1,4 @@
 {
-    "Diseases" : {
         "Anthracnose (ash)" : "https://en.wikipedia.org/wiki/Canker",
         "Tomato Blight" : "https://en.wikipedia.org/wiki/Phytophthora_infestans",
         "Powdery Mildew" : "https://en.wikipedia.org/wiki/Powdery_mildew",
@@ -27,5 +26,4 @@
         "Fusarium Wilt" : "https://en.wikipedia.org/wiki/Fusarium_wilt",
         "Phoma (sunflower)" : "https://en.wikipedia.org/wiki/Leptosphaeria_lindquistii",
         "Verticillium" : "https://en.wikipedia.org/wiki/Verticillium"
-    }
 }
