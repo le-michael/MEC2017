@@ -1,0 +1,26 @@
+{
+  "name": "cropcare",
+  "version": "1.0.0",
+  "description": "Warning system for disease and pest spread in a farm region",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/le-michael/MEC2017.git"
+  },
+  "keywords": [
+    "mec2017"
+  ],
+  "author": "le-michael,wyattwismer,mcdon-a,aseem02",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/le-michael/MEC2017/issues"
+  },
+  "homepage": "https://github.com/le-michael/MEC2017#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "socket.io": "^2.0.3"
+  }
+}
