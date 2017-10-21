@@ -2,26 +2,83 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="/socket.io/socket.io.js"></script>
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+        crossorigin=""></script>
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="client.js"></script>
+    <script src="map.js"></script>
+    <link rel="stylesheet" href="style.css" />
 
 </head>
 
 <body>
     <nav>
         <div class="nav-wrapper  light-blue darken-3">
-            <a href="#" class="brand-logo center ">Crop Care <span class="fa fa-bug"></span></a>
+            <a href="#" class="brand-logo center ">Crop Care
+                <span class="fa fa-bug"></span>
+            </a>
         </div>
     </nav>
+
+    <!-- LOGIN IN CARD -->
+    <div class="row" id="login-card" style="display:none;">
+        <div class="col s12 m3 center">
+            <div class="card light-blue lighten-5 ">
+                <div class="card-content">
+                    <span class="card-title">Welcome to Crop Care.</span>
+                    <p>Please enter your region's code:</p>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="code" class="validate">
+                        </div>
+
+                    </div>
+                    <a class="waves-effect waves-light btn light-blue darken-3" id="login-button">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- LOGIN CARD END -->
+    <div id=mapcard>
+        <div id="mapid"></div>
+    </div>
+    <div class="fixed-action-btn horizontal click-to-toggle">
+        <a class="btn-floating btn-large red">
+            <i class="material-icons">menu</i>
+        </a>
+        <ul>
+            <li>
+                <a class="btn-floating red">
+                    <i class="material-icons">add</i>
+                </a>
+            </li>
+            <li>
+                <a class="btn-floating yellow darken-1">
+                    <i class="material-icons">history</i>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+
+
 
 
 </body>
