@@ -14,7 +14,19 @@ app.get('/', function (req, res) {
 
 
 io.on('connection', function (socket) {
-
+    console.log("client connected");
+    socket.on('confirm-code',function(data){
+        console.log(data.region_code)
+        if(data.region_code == "DEBUG"){
+            console.log("Valid login");
+            socket.emit('valid-login',true);
+        }
+        else{
+            console.log('Invalid Login');
+            socket.emit('valid-login',false);
+        }  
+            
+    });
 
 });
 
