@@ -21,6 +21,7 @@
   "homepage": "https://github.com/le-michael/MEC2017#readme",
   "dependencies": {
     "express": "^4.16.2",
+    "requestify": "^0.2.5",
     "socket.io": "^2.0.3"
   }
 }
