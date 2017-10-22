@@ -15,7 +15,8 @@ function showAlert(jsonfile) {
         $( "<ul/>", {
         "class": "my-new-list",
         html: items.join( "" )
-        }).appendTo( ".modal-content" );
+        }).appendTo( "#AlertInfo" );
         });
     }; // end of document ready
     (jQuery);
+    showAlert('./Data/testdata.json')
