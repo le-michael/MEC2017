@@ -9,8 +9,10 @@ $( document ).ready(function() {
     $.getJSON('./Data/mapdata.json', function( data ) {
         var items = [];
         $.each( data, function( key, val ) {
-        L.circle(val, {radius: 50, color: 'blue'}).addTo(mymap);
+        L.circle(val, {radius: 50, color: 'blue'}).addTo(mymap).bindPopup(key);
         });
-    }); // end of document ready
+    });
+    L.circle([43.116823, -79.914244], {radius: 50, color: 'red'}).addTo(mymap).bindPopup("Sally's Potato Farm");
+     // end of document ready
     (jQuery);
 });
