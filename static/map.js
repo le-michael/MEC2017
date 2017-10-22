@@ -6,4 +6,11 @@ $( document ).ready(function() {
         id: 'mapbox.satellite',
         accessToken: 'pk.eyJ1IjoiZGFyaWdhbjE3IiwiYSI6ImNqOTF4a2ZpODNmdXYycXA2Zjg4cTd5djgifQ.2sbMPlwaZmtiOjfWYNG86Q'
     }).addTo(mymap);
+    $.getJSON('./Data/mapdata.json', function( data ) {
+        var items = [];
+        $.each( data, function( key, val ) {
+        L.circle(val, {radius: 50, color: 'red'}).addTo(mymap);
+        });
+    }); // end of document ready
+    (jQuery);
 });
