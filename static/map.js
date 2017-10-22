@@ -15,4 +15,57 @@ $( document ).ready(function() {
     L.circle([43.116823, -79.914244], {radius: 50, color: 'red'}).addTo(mymap).bindPopup("Sally's Potato Farm");
      // end of document ready
     (jQuery);
+	
+	console.log(Math.PI);
+	var pos = [[43.116823, -79.914244, 0, 0]];
+
+	function getWeather(lat,lon){
+		$.ajax({
+			url : 'http://samples.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&appid=b1b15e88fa797225412429c1c50c122a1',
+			type : "GET",
+			async: false,
+			dataType : "json",
+			success : function(data) {
+				wind = data.wind;
+			}
+		});
+	}
+	function path(){
+		var dispLat = 0;
+		var dispLon = 0;
+		for (i  = 0; i<10; i++){
+			getWeather(pos[i][0],pos[i][1]);		
+			lat = wind.speed*Math.cos(wind.deg/180.0*Math.PI)/1000.0;
+			lon = wind.speed*Math.sin(wind.deg/180.0*Math.PI)/1000.0; 
+			n = -lon/lat;
+			dispLat += 0.35*n* lon;
+			dispLon += 0.35*lat/n;
+			lat += pos[i][0];
+			lon += pos[i][1];
+			
+			pos.push([lat,lon, dispLat, dispLon]);
+		}
+		var popup = L.popup()
+		.setLatLng([pos[0][0],pos[0][1]])
+		.setContent('<p>Wind Speed: 43.12mph<br />Angle: 311 Degrees</p>')
+		.openOn(mymap);
+
+		return pos;
+	}
+	pos = path();
+	var latlngs = [];
+	for(i = 0; i<pos.length; i++){
+		latlngs.push([pos[i][0]- pos[i][2],pos[i][1] - pos[i][3]]);
+	}
+	for(i = pos.length-1; i>-1; i--){
+		latlngs.push([pos[i][0]+ pos[i][2],pos[i][1] + pos[i][3]]);
+	}
+	console.log(latlngs);
+	var polygon = L.polygon(latlngs, {color: 'red'}).addTo(mymap);
+	// zoom the map to the polygon
+	mymap.fitBounds(polygon.getBounds());
+
+	
 });
+
+
