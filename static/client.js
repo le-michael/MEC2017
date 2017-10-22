@@ -2,6 +2,10 @@ var socket = io();
 
 
 $( document ).ready(function() {
+
+    $('#add-alert').modal();
+
+
     $('#login-button').click(function(){
         code = $('#code').val();
         $('#code').val('');
@@ -25,5 +29,6 @@ socket.on('valid-login',function(data){
         console.log("Invalid Login");
         Materialize.toast('Invalid Login', 1000, 'red')
     }
+
 
 });

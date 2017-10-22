@@ -65,7 +65,7 @@
         <ul>
             <li>
                 <a class="btn-floating red">
-                    <i class="material-icons">add</i>
+                    <i class="material-icons modal-trigger" href="#add-alert">add</i>
                 </a>
             </li>
             <li>
@@ -76,19 +76,30 @@
 
         </ul>
     </div>
-  
+
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
-      <div style="background-color:#D2D5DD;font-family:'Lato', sans-serif;"class="modal-content">
-          <h4 style="font-family:'Lato', sans-serif;font-weight:100" >Incoming Alert</h4>
-          <hr>
-      </div>
-      <div style="background-color:#B8BACF"class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Dismiss</a>
-      </div>
+        <div style="background-color:#D2D5DD;font-family:'Lato', sans-serif;" class="modal-content">
+            <h4 style="font-family:'Lato', sans-serif;font-weight:100">Incoming Alert</h4>
+            <hr>
+        </div>
+        <div style="background-color:#B8BACF" class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Dismiss</a>
+        </div>
     </div>
 
     <script src="alert.js"></script>
+
+    <!-- ADD ALERT -->
+    <div id="add-alert" class="modal bottom-sheet">
+        <div class="modal-content">
+            <h4>Create new Alert</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
 
 
 
