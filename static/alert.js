@@ -19,4 +19,3 @@ function showAlert(jsonfile) {
         });
     }; // end of document ready
     (jQuery);
-    showAlert('./Data/testdata.json')
