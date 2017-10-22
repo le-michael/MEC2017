@@ -27,6 +27,16 @@ $( document ).ready(function() {
             region_code: code
         });
     });
+
+
+    $("#button-send").click(function(){
+        console.log($('#pests').val())
+        console.log($('#farms').val())
+        socket.emit('send-new-alert',{
+            pests: $('#pests').val(),
+            farms: $('#farms').val()
+        })
+    });
     
 });
 
@@ -47,4 +57,8 @@ socket.on('valid-login',function(data){
 
 
 
+});
+
+socket.on('send-alert',function(data){
+    showAlert(data);
 });

@@ -28,6 +28,10 @@ io.on('connection', function (socket) {
             
     });
 
+    socket.on('send-new-alert',function(data){
+        socket.emit('send-alert',data);
+    });
+
 });
 
 server.listen(3000, function () {
