@@ -9,7 +9,7 @@ $( document ).ready(function() {
     $.getJSON('./Data/mapdata.json', function( data ) {
         var items = [];
         $.each( data, function( key, val ) {
-        L.circle(val, {radius: 50, color: 'red'}).addTo(mymap);
+        L.circle(val, {radius: 50, color: 'blue'}).addTo(mymap);
         });
     }); // end of document ready
     (jQuery);
